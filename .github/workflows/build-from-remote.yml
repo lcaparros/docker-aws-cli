@@ -1,8 +1,7 @@
 name: Get latest aws-cli release version
 
 on:
-  schedule:
-    - workflow_dispatch
+  - workflow_dispatch
 
 jobs:
   get-version:
