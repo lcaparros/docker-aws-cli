@@ -39,9 +39,9 @@ jobs:
         run: docker push ${{ steps.get_name.outputs.IMAGE_NAME }}:${{ steps.get_version.outputs.VERSION }}
 
       - name: Update latest the Docker image
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/master'
         run: docker tag ${{ steps.get_name.outputs.IMAGE_NAME }}:${{ steps.get_version.outputs.VERSION }} ${{ steps.get_name.outputs.IMAGE_NAME }}:latest
 
       - name: Push latest Docker image to registry
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/master'
         run: docker push ${{ steps.get_name.outputs.IMAGE_NAME }}:latest
